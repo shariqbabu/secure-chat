@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-secondary text-white rounded-lg font-medium hover:bg-secondary-dark transition-colors;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-primary hover:bg-primary hover:bg-opacity-10 rounded-lg transition-colors;
+  }
+
+  .input-base {
+    @apply w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-lg shadow-md p-4;
+  }
+
+  .message-bubble {
+    @apply max-w-xs px-4 py-2 rounded-2xl text-sm break-words;
+  }
+
+  .message-sent {
+    @apply message-bubble bg-chat-sent text-slate-900;
+  }
+
+  .message-received {
+    @apply message-bubble bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-600;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+dark ::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+dark ::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}
